@@ -1,0 +1,185 @@
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(96, 125, 139, 0.9); /* Azul Serenity con transparencia */
+    padding: 1rem 0;
+    text-align: center;
+    z-index: 10;
+    position: sticky; /* Fija la barra de navegación al hacer scroll */
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 1rem;
+}
+
+.nav-links a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+.subscription-content {
+    padding: 4rem 2rem;
+    background-color: #607D8B; /* Azul Serenity */
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.subscription-info {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #2E7D32; /* Verde Oscuro */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.subscription-info h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #FFFFFF;
+}
+
+.subscription-info p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    color: #FFFFFF;
+}
+
+.subscription-info h3 {
+    font-size: 1.8rem;
+    margin-top: 1.5rem;
+    color: #FFFFFF;
+}
+
+.subscription-info ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    text-align: left;
+}
+
+.subscription-info li {
+    margin-bottom: 0.5rem;
+    color: #FFFFFF;
+}
+
+button {
+    background-color: #607D8B; /* Azul Serenity */
+    color: #FFFFFF;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color:  #004d00; /* Verde Oscuro Oscuro */
+}
+/* Estilos para los planes de suscripción */
+.plans-content {
+    padding: 4rem 2rem;
+    background-color: #607D8B; /* Azul Serenity */
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.plans-info {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.plans h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.plans p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.plans {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+}
+
+.plan {
+    background-color: #2E7D32; /* Verde Oscuro */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    flex: 1;
+    max-width: 300px;
+}
+
+.plan h3 {
+    font-size: 2rem;
+    color: #FFFFFF;
+    margin-bottom: 1rem;
+}
+
+.plan ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+
+.plan ul li {
+    color: #FFFFFF;
+}
+
+button {
+    background-color: #607D8B; /* Azul Serenity */
+    color: #FFFFFF;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #1E5D2C; /* Verde Oscuro Oscuro */
+}
+/* Enlace al formulario debajo de cada carpeta */
+.form-link {
+    display: block;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    text-align: center;
+    background-color: #2E7D32; /* Verde Oscuro */
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.form-link:hover {
+    background-color: #1E5D2C; /* Verde Oscuro Oscuro */
+}

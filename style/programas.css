@@ -1,0 +1,150 @@
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #333;
+}
+
+.navbar {
+    background-color: rgba(96, 125, 139, 0.9); /* Azul Serenity con transparencia */
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky; /* Fija la barra de navegación al hacer scroll */
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: rgba(244, 252, 246, 0.822);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #03f570;
+}
+
+.logo img {
+    height: 50px; /* Tamaño del logo; ajusta según sea necesario */
+    width: auto;
+    transition: transform 0.3s ease, filter 0.3s ease; /* Animación suave */
+}
+
+/* Contenido */
+.content {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Programas */
+.programas-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.programa {
+    background: #2a4d2e; /* Verde oscuro para las carpetas */
+    color: rgb(255, 253, 253);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.programa:hover {
+    transform: translateY(-5px); /* Efecto de elevación al pasar el mouse */
+}
+
+.programa-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.programa h3 {
+    color: #fff;
+    margin: 10px 0;
+}
+
+.programa p {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.programa ul {
+    text-align: left;
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.programa ul li {
+    margin-bottom: 5px;
+}
+
+/* Botón de formulario */
+.form-link {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #fdfdfd;
+    color: rgb(255, 197, 197);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.form-link:hover {
+    background-color: #8dec70; /* Color verde para el hover */
+}
+
+/* Footer */
+footer {
+    background-color: #030202;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer img {
+    transition: transform 0.3s ease;
+}
+
+footer img:hover {
+    transform: scale(1.1);
+}
+
+footer a {
+    text-decoration: none;
+}
+
+
+@media (max-width: 768px) {
+    .content {
+        padding: 10px; /* Reduce el padding para pantallas pequeñas */
+    }
+
+    h2 {
+        font-size: 1.5rem; /* Reduce el tamaño del título */
+    }
+}

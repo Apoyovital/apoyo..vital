@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apoyo Vital - Bienestar Mental</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<header class="navbar">
+    <nav class="navbar-container">
+        <!-- Logo a la izquierda -->
+        <a href="index.html" class="logo">
+            <img src="imagenes/APOYO VITAL.png" alt="Logo Apoyo Vital">
+        </a>
+
+        <!-- Menú a la derecha -->
+        <ul class="nav-links">
+            <li><a href="suscripcion.html">Suscripción</a></li>
+            <li><a href="programas.html">Programas</a></li>
+            <li><a href="contactos.html">Contacto</a></li>
+            <li><a href="sobrenosotros.html">Sobre Nosotros</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Imagen principal -->
+<img src="imagenes/b52914d5-3e85-472f-8398-01af5796cd64.webp" alt="psicologa" >
+
+<script src="javas/menu.js"></script>
+
+<!-- Footer -->
+<footer style="background-color: #333; color: white; padding: 20px 0; text-align: center;">
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center;">
+
+        <!-- Redes Sociales -->
+        <div style="display: flex; gap: 15px;">
+            <a href="https://www.facebook.com/tu-pagina" target="_blank">
+                <img src="imagenes/10464408.png" alt="Facebook" style="width: 30px;">
+            </a>
+            <a href="https://www.twitter.com/tu-pagina" target="_blank">
+                <img src="imagenes/10464257.png" alt="Twitter" style="width: 30px;">
+            </a>
+            <a href="https://www.instagram.com/apoyo_vital/profilecard/?igsh=MTl5aHBiaGt1Z2VjeA==" target="_blank">
+                <img src="imagenes/icons8-instagram-30.png" alt="Instagram" style="width: 30px;">
+            </a>
+        </div>
+
+        <!-- Copyright -->
+        <p style="margin-top: 15px; font-size: 14px;">
+            © 2024 Tu Página. Todos los derechos reservados.
+        </p>
+    </div>
+</footer>
+
+</body>
+</html>
+
+<!-- Botón para abrir el chat -->
+<div id="chatbot" class="chatbot-icon">
+    <img src="imagenes/pngtree-chatbot-icon-chat-bot-robot-png-image_4841963.png" alt="Chatbot" />
+</div>
+
+<!-- Ventana de chat -->
+<div id="chatbox" class="chatbox">
+    <div class="chatbox-header">
+        <span>Asistente Virtual</span>
+        <button id="close-chat" class="close-chat">X</button>
+    </div>
+    <div class="chatbox-content" id="chat-content">
+        <div class="message bot-message">¡Hola! ¿En qué puedo ayudarte hoy?</div>
+    </div>
+    <input type="text" id="user-input" placeholder="Escribe tu mensaje..." />
+    <button id="send-message">Enviar</button>
+</div>
+
+<script>
+    // Esperamos a que la página cargue completamente antes de ejecutar cualquier script
+    window.addEventListener('DOMContentLoaded', (event) => {
+        // Obtener elementos del DOM
+        const chatbotIcon = document.getElementById('chatbot');
+        const chatbox = document.getElementById('chatbox');
+        const closeChatButton = document.getElementById('close-chat');
+        const sendButton = document.getElementById('send-message');
+        const userInput = document.getElementById('user-input');
+        const chatContent = document.getElementById('chat-content');
+
+        // Lista de preguntas frecuentes y respuestas
+        const faqs = {
+            "Cómo me puedo inscribir?": "Puedes inscribirte yendo a la navegación de suscripción, donde puedes elegir el plan que más te convenga. Si no sabes cuál elegir, puedes ir a la navegación de programas y observar cuál es mejor para ti.",
+            "Cuánto es la duración de los programas?": "La duración de la terapia, los módulos interactivos y los grupos de apoyo en línea tienen una duración de 1 a 1:30 horas.",
+            "Qué tipo de programas ofrecen?": "Ofrecemos programas de terapia individual, módulos interactivos y grupos de apoyo en línea, todos diseñados para apoyar tu bienestar mental.",
+            "Qué métodos de pago aceptan?": "Aceptamos diversos métodos de pago, incluidos tarjeta de crédito, débito y transferencias bancarias. Para más detalles, puedes visitar la sección de suscripción."
+        };
+
+        // Mostrar el chat cuando se hace clic en el icono
+        chatbotIcon.addEventListener('click', () => {
+            chatbox.style.display = 'block';
+        });
+
+        // Cerrar el chat
+        closeChatButton.addEventListener('click', () => {
+            chatbox.style.display = 'none';
+        });
+
+        // Función para agregar un mensaje al chat
+        function addMessage(content, sender = 'bot') {
+            const message = document.createElement('div');
+            message.classList.add('message');
+            message.classList.add(sender === 'user' ? 'user-message' : 'bot-message');
+            message.textContent = content;
+            chatContent.appendChild(message);
+            chatContent.scrollTop = chatContent.scrollHeight; // Desplazar hacia abajo
+        }
+
+        // Función para manejar las preguntas y respuestas
+        function getBotResponse(userText) {
+            // Convertir la entrada a minúsculas para mejorar la comparación
+            const userQuestion = userText.toLowerCase().trim();
+            
+            // Buscar si la pregunta está en la lista de FAQs
+            for (let question in faqs) {
+                if (userQuestion.includes(question.toLowerCase())) {
+                    return faqs[question];
+                }
+            }
+
+            // Si la pregunta no está en la lista de FAQs, respuesta por defecto
+            return "Lo siento, no tengo una respuesta para esa pregunta. ¿Puedo ayudarte con algo más?";
+        }
+
+        // Enviar un mensaje
+        sendButton.addEventListener('click', () => {
+            const userText = userInput.value.trim();
+            if (userText) {
+                addMessage(userText, 'user');
+                userInput.value = ''; // Limpiar el campo de entrada
+
+                // Obtener la respuesta del bot según la pregunta del usuario
+                const botResponse = getBotResponse(userText);
+                
+                // Mostrar la respuesta del bot
+                setTimeout(() => {
+                    addMessage(botResponse, 'bot');
+                }, 1000);
+            }
+        });
+
+        // Enviar mensaje al presionar "Enter"
+        userInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendButton.click();
+            }
+        });
+    });
+</script>
